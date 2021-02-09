@@ -11,11 +11,23 @@ using namespace std;
 #define imie(...) " [" << #__VA_ARGS__ ": " << (__VA_ARGS__) << "] "
 
 void solve(){
+    ll n, x;
+    cin >> n >> x;
+    ll a;
+    rep(i,0,n){
+        cin >> a;
+        if(a != x) cout << a << " ";
+    }
+    cout << endl;
 }
 
 int main(){
         ios::sync_with_stdio(0);
-	cin.tie(0);
-        solve();
+	    cin.tie(0);
+        int t;
+        t = 1;
+        while(t--){
+            solve();
+        }
         return 0;
 }
