@@ -1,3 +1,6 @@
+import statistics
+import time
+
 
 def solve():
     n = int(input())
@@ -21,10 +24,17 @@ def solve():
 def main():
     t = int(input())
 
-
+    times = []
     while t > 0:
+
+        time_start = time.perf_counter()
         solve()
+        time_duration = time.perf_counter() - time_start
+        times += [time_duration * 1e6]
         t -= 1
+
+    print("mean:",statistics.mean(times))
+    print("stdev:",statistics.stdev(times))
 
 if __name__ == "__main__":
     main()
